@@ -1,0 +1,77 @@
+extends ../layouts/layout
+
+include ../helpers/_mixins
+include ../helpers/_icons
+
+block vars
+	- var title = 'Smart Wallet'
+	- var page = 'privacy'
+
+append content
+	main#privacy
+		#headerAnchor
+		.container
+			.privacy__inner 
+				a.privacy__back-btn(href="/")
+					+image('icons/arrow.svg', 'arrow')
+					span Back to Main page 
+				.privacy__body-wrapper
+					.privacy__body
+						h2.privacy__title # Privacy Policy for Smart Wallet
+						p.privacy__text.white-text Welcome to Smart Wallet. Your privacy is important to us. This Privacy Policy explains how we handle your data when you use our cryptocurrency wallet application.  
+						ul.privacy__items
+							li.privacy__item
+								h5.privacy__item-title ## 1. No Collection of Personal Data
+								div.privacy__item-text 
+									p Smart Wallet is a cold wallet, meaning all your data is stored locally on your device.
+									p We do not collect, store, or process any of the following:
+									br
+									p - Personal information (such as name, email, phone number, etc.)
+									p - Cryptocurrency wallet addresses
+									p - Private keys or seed phrases
+									p - Transaction history
+									br
+								p.privacy__item-plate All wallet-related data remains under your control and is never transmitted to us.
+							li.privacy__item 
+								h5.privacy__item-title ## 2. Third-Party APIs
+								div.privacy__item-text 
+									p To enhance functionality, Smart Wallet integrates with third-party APIs to: 
+									br
+									p - Retrieve real-time cryptocurrency prices 
+									p - Check balances associated with your wallet addresses
+									br
+									p These APIs are used only for fetching publicly available blockchain data. 
+									p We do not intercept, modify, or store any of this information. 
+									p Your data remains private and secure.
+							li.privacy__item 
+								h5.privacy__item-title ## 3. No Tracking or Analytics
+								div.privacy__item-text 
+									p Smart Wallet does not use:  
+									br
+									p - Cookies
+									p - Tracking technologies  
+									p - Analytics services  
+									p - Advertisements
+									br
+									p We do not track your activities within the app or share data with third parties.  
+							li.privacy__item 
+								h5.privacy__item-title ## 4. Security
+								div.privacy__item-text
+									p Since all private keys and wallet information are stored locally on your device, you are solely responsible for securing your device and backup keys. 
+									p We strongly recommend:
+									br
+									p - Using strong passwords  
+									p - Enabling device security features  
+									p - Keeping your backup keys secure and private  
+									br
+									p.bold-text.white-text We cannot recover lost or stolen private keys, <br /> as we do not have access to them. 
+							li.privacy__item 
+								h5.privacy__item-title ## 5. Changes to This Policy 
+								p.privacy__item-text We may update this Privacy Policy from time to time. Any changes will be reflected on this page, and we encourage you to review it periodically.  
+							li.privacy__item 
+								h5.privacy__item-title ## 6. Contact Information
+								div.privacy__item-text
+									p For any privacy-related inquiries, please refer to the contact details provided on our website or our Google Play Store listing.
+									br
+									p By using Smart Wallet, you acknowledge and agree to this Privacy Policy. Your security and privacy are our priority.
+				p.privacy__copy Smart Wallet © 2023

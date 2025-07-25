@@ -1,0 +1,292 @@
+html {
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.03em;
+  font-family: $SF_Pro_Regular, sans-serif;
+  color: $gray;
+  background-color: $bg_primary;
+  overflow-x: hidden;
+  word-break: break-word;
+
+  @include table {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+section {
+  overflow: hidden;
+}
+
+ol,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $primary;
+  font-family: $SF_Pro_Bold, sans-serif;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 38px;
+
+  @include table {
+    font-size: 46px;
+    line-height: 110px;
+  }
+  @include desktop {
+    font-size: 60px;
+    line-height: 72px;
+  }
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 38px;
+  @include table {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  @include desktop {
+    font-size: 48px;
+    line-height: 57px;
+  }
+}
+
+h4 {
+  color: $white;
+  font-size: 24px;
+  line-height: 28px;
+  @include table {
+    font-size: 28px;
+    line-height: 28px;
+  }
+}
+
+img {
+  object-fit: cover;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.container {
+  max-width: $container;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.white-text {
+  color: $white;
+}
+
+.bold-text {
+  font-family: $SF_Pro_Bold, sans-serif;
+}
+
+.download-btn {
+  @include flex();
+  font-family: $SF_Pro_Bold, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  width: 236px;
+  height: 56px;
+  color: $white;
+  border-radius: 12px;
+  transition: $transition;
+  &:hover {
+    transform: scale(1.03);
+  }
+  span {
+    margin-left: 8px;
+  }
+  &--windows {
+    background-color: $primary;
+  }
+  &--android {
+    border: 1px solid $white;
+  }
+  &__wrapper {
+    @include flex(center);
+    gap: 10px;
+    flex-direction: column;
+  }
+  &-subtext {
+    max-width: 300px;
+    width: 100%;
+    margin: 5px auto 0;
+    font-size: 11px;
+    line-height: 20px;
+    text-align: center;
+  }
+
+  @include table-sm {
+    &__wrapper {
+      flex-direction: row;
+    }
+    &__subtext {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+  }
+}
+
+.windows-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.s-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.logo-horizontal-icon {
+  width: 138px;
+  height: 24px;
+}
+
+.swiper-pagination {
+  display: block;
+  position: absolute;
+  bottom: -27px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  span {
+    @include size(8px, 8px, 50%);
+    background-color: rgba(36, 36, 36, 1);
+    display: inline-block;
+    margin: 0 4px;
+  }
+  span.swiper-pagination-bullet-active {
+    background-color: $primary;
+  }
+
+  @include desktop-sm {
+    display: none;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: auto;
+  background-color: $bg_primary;
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: $transition;
+  overflow-y: auto;
+  padding: 75px 20px 75px;
+  &__inner {
+    max-width: 1000px;
+    width: 100%;
+    padding: 33px 32px 41px;
+    background-color: $bg_secondary;
+    box-shadow: 0px -12px 20px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 21px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &__close {
+    position: absolute;
+    top: 25px;
+    right: 15px;
+    z-index: 1;
+    height: 24px;
+    width: 24px;
+    @include flex();
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 100%;
+      height: 2px;
+      background-color: rgba(217, 217, 217, 0.22);
+      transition: $transition;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+    &:hover {
+      &::before,
+      &::after {
+        background-color: rgba(217, 217, 217, 1);
+      }
+    }
+  }
+  &__header {
+    margin-bottom: 30px;
+  }
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+  }
+
+  @include table-sm {
+    padding: 95px 20px 87px;
+    &__inner {
+      padding: 50px 64px 41px;
+    }
+  }
+
+  @include table {
+    &__close {
+      top: 68px;
+      right: 41px;
+    }
+    &__header {
+      margin-bottom: 50px;
+    }
+  }
+
+  @include desktop-sm {
+    &__inner {
+      padding: 66px 128px 82px;
+    }
+  }
+}
+
+.text-gradient {
+  background: $textGradint;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

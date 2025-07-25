@@ -1,0 +1,38 @@
+#howToUse {
+	padding-bottom: 40px;
+	.howToUse__inner {
+		text-align: center;
+	}
+	.howToUse__title {
+		width: fit-content;
+		margin: 0 auto 12px;
+	}
+	.howToUse__text {
+		margin-bottom: 94px;
+	}
+	.howToUse-item {
+		margin-bottom: 106px;
+	}
+
+  @include table {
+		padding-bottom: 120px;
+		.howToUse__title {
+			margin-bottom: 20px;
+		}
+		.howToUse__text {
+			margin-bottom: 118px;
+		}
+		.howToUse-item {
+			margin-bottom: 0;
+		}
+    .howToUse__items {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+  }
+
+	@include desktop {
+		padding-bottom: 240px;
+	}
+}

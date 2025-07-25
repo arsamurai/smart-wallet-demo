@@ -1,0 +1,10 @@
+mixin whyItem(img, title, text)
+	.why-item
+		if img == 1
+			+licenseKey1.why-item__img
+		else if img == 2
+			+vr.why-item__img
+		else
+			+blockchain.why-item__img
+		h4.why-item__title= title
+		p.why-item__text= text

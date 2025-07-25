@@ -1,0 +1,13 @@
+mixin howToUseItem(index, img, title, text)
+	.howToUse-item
+		if img == 1
+			+cloud.howToUse-item__img
+		else if img == 2
+			+licenseKey2.howToUse-item__img
+		else
+			+wireless.howToUse-item__img
+		h5.howToUse-item__title(class= index === 0 && "first-title" || index === 1 && "second-title" || index === 2 && "third-title")
+			span.howToUse-item__dot.howToUse-item__dot--1
+			span=title
+			span.howToUse-item__dot.howToUse-item__dot--2
+		p.howToUse-item__text= text

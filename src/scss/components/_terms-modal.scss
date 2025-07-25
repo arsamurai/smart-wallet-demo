@@ -1,0 +1,36 @@
+.terms-modal {
+	&__title {
+		color: $white;
+		max-width: 230px;
+		width: 100%;
+	}
+	&__copy {
+		font-family: $SF_Pro_Bold, sans-serif;
+		font-size: 12px;
+		line-height: 18px;
+	}
+	&__item:not(:last-child) {
+		margin-bottom: 30px;
+	}
+	&__item-title {
+		color: $white;
+	}
+
+	@include table-sm {
+		&__title {
+			max-width: fit-content;
+		}
+	}
+
+	@include table {
+		&__copy {
+			font-size: 16px;
+		}	
+	}
+
+	@include desktop-sm {
+		&__header {
+			@include flex(space-between);
+		}
+	}
+}

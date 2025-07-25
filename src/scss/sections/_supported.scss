@@ -1,0 +1,141 @@
+#supported {
+  .supported__title {
+    width: fit-content;
+    margin: 0 auto 20px;
+  }
+  .supported__inner {
+    padding: 197px 0 240px;
+    text-align: center;
+    position: relative;
+  }
+  .supported__coin {
+    position: absolute;
+  }
+  .supported__coin--4,
+  .supported__coin--5,
+  .supported__coin--7,
+  .supported__coin--9,
+  .supported__coin--12 {
+    @include size(24px, 24px, 50%);
+  }
+  .supported__coin--1,
+  .supported__coin--2,
+  .supported__coin--3,
+  .supported__coin--14,
+  .supported__coin--15 {
+    @include size(40px, 40px, 50%);
+  }
+  .supported__coin--6,
+  .supported__coin--8,
+  .supported__coin--10,
+  .supported__coin--11,
+  .supported__coin--13 {
+    @include size(48px, 48px, 50%);
+  }
+  .supported__coin--1 {
+    left: 0;
+    top: 20%;
+  }
+  .supported__coin--2 {
+    left: 5%;
+    top: 75%;
+  }
+  .supported__coin--3 {
+    left: 0;
+    top: 60%;
+  }
+  .supported__coin--4 {
+    left: 22%;
+    top: 90%;
+  }
+  .supported__coin--5 {
+    left: 20%;
+    top: 20%;
+  }
+  .supported__coin--6 {
+    left: 35%;
+    top: 65%;
+  }
+  .supported__coin--7 {
+    left: 30%;
+    top: 0;
+  }
+  .supported__coin--8 {
+    left: 45%;
+    top: 13%;
+  }
+  .supported__coin--9 {
+    left: 60%;
+    top: 0;
+  }
+  .supported__coin--10 {
+    left: 65%;
+    top: 65%;
+  }
+  .supported__coin--11 {
+    left: 72%;
+    top: 15%;
+  }
+  .supported__coin--12 {
+    left: 75%;
+    top: 90%;
+  }
+  .supported__coin--13 {
+    left: 44%;
+    top: 81%;
+  }
+  .supported__coin--14 {
+    left: 90%;
+    top: 30%;
+  }
+  .supported__coin--15 {
+    left: 85%;
+    top: 76%;
+  }
+
+  @include table {
+    .supported__coin {
+      width: auto;
+      height: auto;
+    }
+    .supported__coin--4,
+    .supported__coin--5,
+    .supported__coin--7,
+    .supported__coin--9,
+    .supported__coin--12 {
+      @include size(54px, 54px, 50%);
+    }
+    .supported__coin--1,
+    .supported__coin--2,
+    .supported__coin--3,
+    .supported__coin--14,
+    .supported__coin--15 {
+      @include size(68px, 68px, 50%);
+    }
+    .supported__coin--6,
+    .supported__coin--8,
+    .supported__coin--10,
+    .supported__coin--11,
+    .supported__coin--13 {
+      @include size(78px, 78px, 50%);
+    }
+    .supported__coin--3 {
+      left: 15%;
+      top: 55%;
+    }
+    .supported__coin--13 {
+      left: 76%;
+      top: 52%;
+    }
+    .supported__coin--15 {
+      left: 90%;
+      top: 70%;
+    }
+  }
+
+  @include desktop {
+    .supported__inner {
+      padding: 282px 0 290px;
+    }
+  }
+}

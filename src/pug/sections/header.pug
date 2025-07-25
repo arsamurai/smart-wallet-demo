@@ -1,0 +1,8 @@
+header#header.header 
+	.container 
+		.header__inner
+			a(href="/").header__logo.header__logo--mobile
+				+sLogo
+			a(href="/").header__logo.header__logo--desktop
+				+logoHorizontal("header")
+			+link("/", "Download").header__btn

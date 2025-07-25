@@ -1,0 +1,169 @@
+.howToUse-item {
+  padding: 0 10px;
+  text-align: center;
+  &__title {
+    font-size: 20px;
+    line-height: 28px;
+    margin: 48px 0 12px;
+    position: relative;
+    display: inline-block;
+  }
+  &__title::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 13px;
+    width: 112px;
+    height: 1px;
+    border: 1px dashed rgba(36, 36, 36, 1);
+  }
+  &__title.first-title::before {
+    left: 80px;
+  }
+  &__title.third-title::before {
+    right: 83px;
+  }
+  &__title.second-title::before {
+    right: 83px;
+  }
+  &__title.first-title::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 18px;
+    right: -140px;
+    width: 1px;
+    height: 320px;
+    border: 1px dashed rgba(36, 36, 36, 1);
+  }
+  &__title.third-title::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    bottom: 16px;
+    left: -141px;
+    width: 1px;
+    height: 290px;
+    border: 1px dashed rgba(36, 36, 36, 1);
+  }
+  &__title.second-title::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 13px;
+    left: 80px;
+    width: 112px;
+    height: 1px;
+    border: 1px dashed rgba(36, 36, 36, 1);
+  }
+  &__dot {
+    position: absolute;
+    top: 12px;
+    transform: translateX(-50%);
+    @include size(5px, 5px, 50%);
+    background-color: $primary;
+  }
+  &__dot--1 {
+    left: -32px;
+  }
+  &__dot--2 {
+    right: -32px;
+  }
+  &__title.first-title .howToUse-item__dot--1 {
+    display: none;
+  }
+  &__title.third-title .howToUse-item__dot--2 {
+    display: none;
+  }
+  &__text {
+    color: $white;
+    font-size: 20px;
+    line-height: 28px;
+    font-family: $SF_Pro_Bold, sans-serif;
+    max-width: 247px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  &__img {
+    position: relative;
+    margin: 36px auto 0;
+    &::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      z-index: -1;
+      @include size(86px, 86px, 50%);
+      border-right: 1px dashed rgba(70, 70, 70, 1);
+      background-color: $bg_secondary;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: -31px;
+      left: -31px;
+      z-index: -2;
+      @include size(109px, 109px, 50%);
+      border-left: 1px dashed rgba(70, 70, 70, 1);
+      background-color: rgba(20, 20, 20, 1);
+    }
+    &,
+    & svg {
+      width: 45px;
+      height: 45px;
+    }
+  }
+
+  @include table {
+    &__title {
+      margin: 140px 0 16px;
+      display: block;
+    }
+    &__title::before, &__title::after {
+      display: none;
+    } 
+    &__title:not(.first-title)::before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -1;
+      top: -30px;
+      right: 52%;
+      width: 114%;
+      height: 1px;
+      border: 1px dashed rgba(36, 36, 36, 1);
+    }
+    &__dot {
+      top: -36px;
+      left: 50%;
+      @include size(12px, 12px, 50%);
+    }
+    &__title.first-title .howToUse-item__dot--2 {
+      display: block;
+    }
+    &__dot--2 {
+      display: none;
+    }
+    &__text {
+      max-width: 280px;
+    }
+    &__img {
+      &::before {
+        @include size(101px, 101px, 50%);
+      }
+      &::after {
+        @include size(124px, 124px, 50%);
+      }
+      &,
+      & svg {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+  @include desktop-sm {
+    &__title:not(.first)::before {
+      width: 108%;
+    }
+  }
+}

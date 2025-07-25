@@ -1,0 +1,10 @@
+mixin downloadItem(img, title, text)
+	.download-item
+		if img == 1
+			+licenseKey1.download-item__img.key
+		else if img == 2
+			+mouse.download-item__img.mouse
+		else
+			+nodes.download-item__img.nodes
+		h4.download-item__title= title
+		p.download-item__text= text

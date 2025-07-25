@@ -1,0 +1,58 @@
+.download-item {
+  margin-top: 42px;
+  padding: 40px 58px 30px;
+  background-color: $bg_secondary;
+  box-shadow: $boxShadow;
+  border-radius: 21px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include flex();
+    @include size(64px, 64px, 50%);
+    background-color: rgba(15, 15, 15, 1);
+    border: 5px solid $bg_secondary;
+    &.key svg {
+      width: 32px;
+      height: 32px;
+    }
+    &.mouse svg {
+      width: 34px;
+      height: 34px;
+    }
+    &.nodes svg {
+      width: 32px;
+      height: 30px;
+    }
+  }
+  &__title {
+    margin-bottom: 8px;
+  }
+
+  @include table {
+    padding: 62px 77px 42px;
+    &__title {
+      margin-bottom: 12px;
+    }
+    &__img {
+      @include size(84px, 84px, 50%);
+      border: 7px solid $bg_secondary;
+      &.key svg {
+        width: 40px;
+        height: 40px;
+      }
+      &.mouse svg {
+        width: 44px;
+        height: 44px;
+      }
+      &.nodes svg {
+        width: 44px;
+        height: 44px;
+      }
+    }
+  }
+}

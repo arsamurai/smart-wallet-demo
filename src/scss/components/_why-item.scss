@@ -1,0 +1,53 @@
+.why-item {
+  padding: 32px 32px 40px 24px;
+  background-color: $bg_secondary;
+  box-shadow: $boxShadow;
+  border-radius: 21px;
+  position: relative;
+  cursor: pointer;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $itemGradient;
+    opacity: 0;
+    transition: $transition;
+    border-radius: 21px;
+  }
+  &__title {
+    width: fit-content;
+    margin: 68px 0 20px;
+  }
+  &__title,
+  &__text {
+    position: relative;
+    z-index: 1;
+  }
+  &:hover {
+    .why-item__title {
+      background: $textGradint;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  @include table {
+    &__text {
+      max-width: 360px;
+      width: 100%;
+    }
+  }
+
+  @include desktop {
+    &__title {
+      margin: 70px 0 21px;
+    }
+    padding: 44px 48px 70px;
+  }
+}

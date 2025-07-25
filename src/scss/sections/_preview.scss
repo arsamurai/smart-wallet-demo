@@ -1,0 +1,260 @@
+#preview {
+  padding-bottom: 100px;
+  text-align: center;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 3;
+    bottom: 65px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 140px;
+    background: $gradient;
+  }
+  .preview__inner {
+    position: relative;
+    padding-top: 44px;
+  } 
+  .preview__logo {
+    margin: 0 auto;
+  }
+  .preview__logo, .preview__logo svg {
+    width: 77px;
+    height: 48px;
+  }
+  .preview__title {
+    max-width: 228px;
+    width: 100%;
+    margin: 57px auto 20px;
+  }
+  .preview__text {
+    color: $white;
+    margin: 0 auto 32px;
+    max-width: 610px;
+    width: 100%;
+  }
+  .preview__images {
+    position: relative;
+    z-index: -1;
+  }
+  .preview__light,
+  .preview__lines,
+  .preview__screen--1,
+  .preview__screen--2,
+  .preview__screen--3 {
+    position: absolute;
+  }
+  .preview__lines {
+    top: -90px;
+    left: -115px;
+    z-index: -2;
+    svg {
+      width: 600px;
+      height: 900px;
+    }
+  }
+  .preview__light {
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -3;
+    svg {
+      height: 400px;
+    }
+  }
+  .preview__laptop {
+    margin-top: -15px;
+    animation: 1s linear 1 forwards zoomOut1;
+    transform: scale(1.5);
+  }
+  .preview__screen--1 {
+    top: 15px;
+    width: 118px;
+    left: -35px;
+    z-index: 1;
+  }
+  .preview__screen--2 {
+    right: -55px;
+    top: 42px;
+    width: 297px;
+    z-index: 2;
+  }
+  .preview__screen--3 {
+    right: -55px;
+    top: 85px;
+    width: 297px;
+    z-index: 2;
+  }
+
+  @media screen and (min-width: 400px) {
+    .preview__screen--1 {
+      top: 45px;
+    }
+    .preview__screen--2  {
+      top: 57px;
+    }
+    .preview__screen--3 {
+      top: 120px;
+    }
+  }
+
+  @media screen and (min-width: 450px) {
+    .preview__screen--1 {
+      top: 82px;
+      left: -10px;
+    }
+    .preview__screen--3, .preview__screen--2 {
+      right: 0;
+    }
+    .preview__screen--2  {
+      top: 87px;
+    }
+    .preview__screen--3 {
+      top: 150px;
+    }
+  }
+
+  @include table-sm {
+    .preview__title {
+      max-width: 100%;
+      width: fit-content;
+      margin: 57px auto 20px;
+    }
+    .preview__lines {
+      left: 10px;
+    }
+    .preview__light {
+      bottom: 25%;
+      svg {
+        height: 600px;
+      }
+    }
+    .preview__screen--1 {
+      top: 30px;
+      width: 176px;
+    }
+    .preview__screen--3, .preview__screen--2 {
+      width: 376px;
+    }
+    .preview__screen--2  {
+      top: 57px;
+    }
+    .preview__screen--3 {
+      top: 120px;
+    }
+  }
+
+  @include table {
+    &::before {
+      height: 340px;
+      bottom: 25px;
+    }
+    .preview__logo, .preview__logo svg {
+      width: 98px;
+      height: 60px;
+    }
+    .preview__title {
+      margin: 100px auto 24px;
+    }
+    .preview__text {
+      margin-bottom: 40px;
+      line-height: 32px;
+    }
+    .preview__lines {
+      svg {
+        width: 1132px;
+        height: 1111px;
+      }
+    }
+    .preview__laptop {
+      margin-top: -100px;
+      animation: 1s linear 1 forwards zoomOut2;
+      transform: scale(1.3);
+    }
+    .preview__light {
+      bottom: 50%;
+      transform: translateX(-50%) translateY(50%);
+      svg {
+        height: 800px;
+      }
+    }
+    .preview__screen--1 {
+      width: 256px;
+    }
+    .preview__screen--2,
+    .preview__screen--3 {
+      width: 476px;
+    }
+    .preview__screen--3 {
+      top: 150px;
+    }
+  }
+
+  @include desktop-sm {
+    .preview__light svg {
+      height: auto;
+    }
+    .preview__screen--1 {
+      left: 26px;
+      width: 276px;
+    }
+  }
+
+  @include desktop {
+    padding-bottom: 0;
+    &::before {
+      bottom: -100px;
+      height: 640px;
+    }
+    .preview__lines {
+      top: 0;
+      left: 55px;
+      svg {
+        width: 1432px;
+        height: 1411px;
+      }
+    }
+    .preview__laptop {
+      margin-top: -150px;
+      animation: 1s linear 1 forwards zoomOut3;
+    }
+    .preview__screen--1 {
+      left: 106px;
+      width: 326px;
+    }
+    .preview__screen--2,
+    .preview__screen--3 {
+      right: 48px;
+      width: 576px;
+    }
+    .preview__screen--3 {
+      top: 175px;
+    }
+  }
+
+  @include lg-desktop {
+    &::before {
+      bottom: -75px;
+    }
+    .preview__laptop {
+      margin-top: -250px;
+    }
+  }
+
+  @media screen and (min-width: 1500px) {
+    .preview__screen--1 {
+      left: 106px;
+      width: 376px;
+    }
+    .preview__screen--2,
+    .preview__screen--3 {
+      right: 128px;
+      width: 776px;
+    }
+    .preview__screen--3 {
+      top: 210px;
+    }
+  }
+}

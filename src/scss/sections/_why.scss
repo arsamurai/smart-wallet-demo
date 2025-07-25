@@ -1,0 +1,29 @@
+#why {
+	padding-bottom: 180px;
+	.why__title {
+		width: fit-content;
+		margin: 0 auto 40px;
+	}
+  .why-item {
+    margin-bottom: 12px;
+  }
+
+  @include table {
+		padding-bottom: 240px;
+		.why__title {
+			margin-bottom: 80px;
+		}
+		.why-item {
+			margin-bottom: 0;
+		}
+    .why__items {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+  }
+
+	@include desktop {
+		padding-bottom: 320px;
+	}
+}

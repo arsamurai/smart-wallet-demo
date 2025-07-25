@@ -1,0 +1,117 @@
+extends ../layouts/layout
+
+include ../helpers/_mixins
+include ../helpers/_icons
+include ../components/why-item
+include ../components/howToUse-item
+include ../components/download-item
+
+block vars
+  - var title = 'Smart Wallet'
+  - var page = 'main'
+  -
+    var whyItems = [
+      {img: 1, title: 'Secured', text: 'Your private keys are encrypted and never leave your device. You have full control of your funds.'},
+      {img: 2, title: 'Anonymous', text: 'Enjoy a wallet devoid of account requirements, verification hassles, and KYC obligations just to access its fundamental features.'},
+      {img: 3, title: 'Multi-currency', text: 'The ultimate application to manage, track and exchange all your digital assets within one wallet.'}
+    ]
+    var downloadItems = [
+      {img: 1, title: 'Safe', text: 'Your private keys are encrypted and never leave your device.'},
+      {img: 2, title: 'Easy', text: 'Easy and simple, with full control your funds. Join to Smart Wallet!'},
+      {img: 3, title: 'Functional', text: 'Receive, send and hold your crypto with multiple wallets.'}
+    ]
+    var howToUseItems = [
+      {img: 1, title: 'Step 1', text: 'Download Smart Wallet App for Windows from the website'},
+      {img: 2, title: 'Step 2', text: 'Open application and create a new wallet in few clicks'},
+      {img: 3, title: 'Step 3', text: 'Enjoy your journey to the crypto world along with Smart Wallet'}
+    ]
+
+append content
+  main#main 
+    section#preview
+      .container
+        .preview__inner
+          +logoVertical.preview__logo
+          h1.preview__title.text-gradient The only digital wallet you need
+          p.preview__text The ultimate gateway to decentralized finance in a user-friendly, multi-currency <span class="bold-text"> and convenient <span class="text-gradient">cryptocurrency wallet for all your needs.</span></span>
+          .download-btn__wrapper                     
+            a(href="/").download-btn.download-btn--windows
+              +windows
+              span Download for Windows
+            a(href="/").download-btn.download-btn--android
+              +android
+              span Download for Android
+          p.download-btn-subtext By using this wallet, you agree to all Terms and Conditions.
+          #headerAnchor
+          .preview__images
+            +image('pics/laptop.png', 'laptop').preview__laptop
+            +image('pics/screen-1.svg', 'screen-1').preview__screen--1(data-aos="fade-right" data-aos-delay='600')
+            +image('pics/screen-2.svg', 'screen-2').preview__screen--2(data-aos="fade-left" data-aos-delay='800')
+            +image('pics/screen-3.svg', 'screen-3').preview__screen--3(data-aos="fade-left" data-aos-delay='1000')
+          +image('icons/light.svg', 'light').preview__light
+          +lines.preview__lines
+    section#why(data-aos="fade-up" data-aos-delay='400')
+      .container 
+        .why__inner
+          h2.why__title.text-gradient Why Smart Wallet?
+          .why__items
+            each item in whyItems
+              +whyItem(item.img, item.title, item.text)
+    section#supported(data-aos="fade-up" data-aos-delay='400')
+      .container 
+        .supported__inner 
+          h2.supported__title.text-gradient Supported cryptocurrencies
+          p.supported__text Ethereum and ERC-20 tokens
+          +image("coins/coin-1.svg").supported__coin.supported__coin--1(data-aos="fade" data-aos-delay='900')
+          +image("coins/coin-2.svg").supported__coin.supported__coin--2(data-aos="fade" data-aos-delay='1000')
+          +image("coins/coin-3.svg").supported__coin.supported__coin--3(data-aos="fade" data-aos-delay='1100')
+          +image("coins/coin-4.svg").supported__coin.supported__coin--4(data-aos="fade" data-aos-delay='1200')
+          +image("coins/coin-5.svg").supported__coin.supported__coin--5(data-aos="fade" data-aos-delay='1300')
+          +image("coins/coin-6.svg").supported__coin.supported__coin--6(data-aos="fade" data-aos-delay='900')
+          +image("coins/coin-7.svg").supported__coin.supported__coin--7(data-aos="fade" data-aos-delay='1000')
+          +image("coins/coin-8.svg").supported__coin.supported__coin--8(data-aos="fade" data-aos-delay='1100')
+          +image("coins/coin-9.svg").supported__coin.supported__coin--9(data-aos="fade" data-aos-delay='1200')
+          +image("coins/coin-10.svg").supported__coin.supported__coin--10(data-aos="fade" data-aos-delay='1300')
+          +image("coins/coin-11.svg").supported__coin.supported__coin--11(data-aos="fade" data-aos-delay='900')
+          +image("coins/coin-12.svg").supported__coin.supported__coin--12(data-aos="fade" data-aos-delay='1000')
+          +image("coins/coin-13.svg").supported__coin.supported__coin--13(data-aos="fade" data-aos-delay='1100')
+          +image("coins/coin-14.svg").supported__coin.supported__coin--14(data-aos="fade" data-aos-delay='1200')
+          +image("coins/coin-15.svg").supported__coin.supported__coin--15(data-aos="fade" data-aos-delay='1300')
+    section#download.download
+      .container
+        .download__inner 
+          .download-images
+            .download-images__swiper-wrapper
+              .download-images__swiper.swiper
+                .swiper-wrapper
+                  .swiper-slide.download__image
+                    +image('pics/download-1.png')
+                  .swiper-slide.download__image
+                    +image('pics/download-2.png')
+                  .swiper-slide.download__image
+                    +image('pics/download-3.png')
+          .download-items
+            .download-items__swiper-wrapper
+              .download-items__swiper-pagination.swiper-pagination
+              .download-items__swiper.swiper
+                .swiper-wrapper
+                  each item in downloadItems 
+                    .swiper-slide
+                      +downloadItem(item.img, item.title, item.text)
+          .download-btn__wrapper                        
+            a(href="/").download-btn.download-btn--windows
+              +windows
+              span Download for Windows
+            a(href="/").download-btn.download-btn--android
+              +android
+              span Download for Android
+          p.download-btn-subtext By using this wallet, you agree to all Terms and Conditions.
+    section#howToUse(data-aos="fade-up" data-aos-delay='400')
+      .container 
+        .howToUse__inner 
+          h2.howToUse__title.text-gradient How to use?
+          p.howToUse__text It takes a few minutes
+          .howToUse__items 
+            each item, index in howToUseItems 
+              +howToUseItem(index, item.img, item.title, item.text)
+

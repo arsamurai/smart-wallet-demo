@@ -1,0 +1,30 @@
+$container: 1560px;
+$xxl-min: 1400px;
+$xl-min: 1200px;
+$lg-min: 992px;
+$md-min: 768px;
+$sm-min: 576px;
+
+// Colors
+$white: rgba(255, 255, 255, 1);
+$black: rgba(0, 0, 0, 1);
+$primary: rgba(5, 93, 245, 1);
+$gray: rgba(82, 82, 82, 1);
+$bg_primary: rgba(14, 14, 14, 1);
+$bg_secondary: rgba(24, 24, 24, 1);
+
+// Fonts
+$SF_Pro_Regular: 'SF-Pro-Display-Regular';
+$SF_Pro_Medium: 'SF-Pro-Display-Medium';
+$SF_Pro_Bold: 'SF-Pro-Display-Semibold';
+
+// Transitions
+$transition: all linear 0.3s;
+
+// Gradient
+$gradient: linear-gradient(359.28deg, #0e0e0e 44.43%, rgba(14, 14, 14, 0) 99.28%);
+$itemGradient: linear-gradient(125.29deg, rgba(24, 24, 24, 0) 27.61%, #132138 114.91%);
+$textGradint: linear-gradient(91.58deg, #055df5 -15.85%, #06f4ee 108.16%);
+
+// Shadows
+$boxShadow: 0px -12px 20px 0px rgba(0, 0, 0, 0.15);

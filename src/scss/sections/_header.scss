@@ -1,0 +1,42 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: $black;
+  padding: 12px 0;
+  transform: translateY(-100%);
+  transition: $transition;
+  &__inner {
+    @include flex(space-between, flex-start);
+  }
+  &__btn {
+    padding: 7px 25px 8px 24px;
+    background-color: $primary;
+    color: $white;
+    font-family: $SF_Pro_Medium, sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    border-radius: 333px;
+    transition: $transition;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  &.active {
+    transform: translateY(0);
+  }
+  &__logo--desktop {
+    display: none;
+  }
+
+  @include table-sm {
+    &__logo--desktop {
+      display: block;
+    }
+    &__logo--mobile {
+      display: none;
+    }
+  }
+}
