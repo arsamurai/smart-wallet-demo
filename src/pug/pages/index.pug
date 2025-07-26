@@ -7,7 +7,7 @@ include ../components/howToUse-item
 include ../components/download-item
 
 block vars
-  - var title = 'Smart Wallet'
+  - var title = 'Sky Wallet'
   - var page = 'main'
   -
     var whyItems = [
@@ -17,13 +17,13 @@ block vars
     ]
     var downloadItems = [
       {img: 1, title: 'Safe', text: 'Your private keys are encrypted and never leave your device.'},
-      {img: 2, title: 'Easy', text: 'Easy and simple, with full control your funds. Join to Smart Wallet!'},
+      {img: 2, title: 'Easy', text: 'Easy and simple, with full control your funds. Join to Sky Wallet!'},
       {img: 3, title: 'Functional', text: 'Receive, send and hold your crypto with multiple wallets.'}
     ]
     var howToUseItems = [
-      {img: 1, title: 'Step 1', text: 'Download Smart Wallet App for Windows from the website'},
+      {img: 1, title: 'Step 1', text: 'Download Sky Wallet App for Windows from the website'},
       {img: 2, title: 'Step 2', text: 'Open application and create a new wallet in few clicks'},
-      {img: 3, title: 'Step 3', text: 'Enjoy your journey to the crypto world along with Smart Wallet'}
+      {img: 3, title: 'Step 3', text: 'Enjoy your journey to the crypto world along with Sky Wallet'}
     ]
 
 append content
@@ -53,7 +53,7 @@ append content
     section#why(data-aos="fade-up" data-aos-delay='400')
       .container 
         .why__inner
-          h2.why__title.text-gradient Why Smart Wallet?
+          h2.why__title.text-gradient Why Sky Wallet?
           .why__items
             each item in whyItems
               +whyItem(item.img, item.title, item.text)
